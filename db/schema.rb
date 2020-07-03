@@ -10,7 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_28_043830) do
+ActiveRecord::Schema.define(version: 2020_06_28_235346) do
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "phone_number"
+    t.string "address"
+    t.string "industry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "logs", force: :cascade do |t|
+    t.date "next_approach_date"
+    t.integer "status"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "matters", force: :cascade do |t|
+    t.string "name"
+    t.string "detail"
+    t.string "contact_person"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

@@ -13,7 +13,8 @@ class MattersController < ApplicationController
 
   # GET /matters/new
   def new
-    @matter = Matter.new
+    @company = Company.find(params[:company_id])
+    @matter = @company.matters.new
   end
 
   # GET /matters/1/edit

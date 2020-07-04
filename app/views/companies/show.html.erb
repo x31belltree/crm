@@ -19,6 +19,7 @@
   <strong>Industry:</strong>
   <%= @company.industry %>
 </p>
+<%= link_to '案件登録', new_company_matter_path(@company) %>
 
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>

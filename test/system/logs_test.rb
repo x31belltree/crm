@@ -15,6 +15,7 @@ class LogsTest < ApplicationSystemTestCase
     click_on "New Log"
 
     fill_in "Comment", with: @log.comment
+    fill_in "Matter", with: @log.matter_id
     fill_in "Next approach date", with: @log.next_approach_date
     fill_in "Status", with: @log.status
     click_on "Create Log"
@@ -28,6 +29,7 @@ class LogsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Comment", with: @log.comment
+    fill_in "Matter", with: @log.matter_id
     fill_in "Next approach date", with: @log.next_approach_date
     fill_in "Status", with: @log.status
     click_on "Update Log"

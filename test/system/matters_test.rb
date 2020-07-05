@@ -14,6 +14,7 @@ class MattersTest < ApplicationSystemTestCase
     visit matters_url
     click_on "New Matter"
 
+    fill_in "Company", with: @matter.company_id
     fill_in "Contact person", with: @matter.contact_person
     fill_in "Detail", with: @matter.detail
     fill_in "Name", with: @matter.name
@@ -27,6 +28,7 @@ class MattersTest < ApplicationSystemTestCase
     visit matters_url
     click_on "Edit", match: :first
 
+    fill_in "Company", with: @matter.company_id
     fill_in "Contact person", with: @matter.contact_person
     fill_in "Detail", with: @matter.detail
     fill_in "Name", with: @matter.name

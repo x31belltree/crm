@@ -4,6 +4,7 @@ class CreateMatters < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :detail
       t.string :contact_person
+      t.references :company, foreign_key: true
 
       t.timestamps
     end

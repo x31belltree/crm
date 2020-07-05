@@ -17,7 +17,7 @@ class LogsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create log" do
     assert_difference('Log.count') do
-      post logs_url, params: { log: { comment: @log.comment, next_approach_date: @log.next_approach_date, status: @log.status } }
+      post logs_url, params: { log: { comment: @log.comment, matter_id: @log.matter_id, next_approach_date: @log.next_approach_date, status: @log.status } }
     end
 
     assert_redirected_to log_url(Log.last)
@@ -34,7 +34,7 @@ class LogsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update log" do
-    patch log_url(@log), params: { log: { comment: @log.comment, next_approach_date: @log.next_approach_date, status: @log.status } }
+    patch log_url(@log), params: { log: { comment: @log.comment, matter_id: @log.matter_id, next_approach_date: @log.next_approach_date, status: @log.status } }
     assert_redirected_to log_url(@log)
   end
 

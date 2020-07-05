@@ -4,8 +4,10 @@ one:
   name: MyString
   detail: MyString
   contact_person: MyString
+  company: one
 
 two:
   name: MyString
   detail: MyString
   contact_person: MyString
+  company: two

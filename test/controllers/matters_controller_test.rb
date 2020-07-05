@@ -17,7 +17,7 @@ class MattersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create matter" do
     assert_difference('Matter.count') do
-      post matters_url, params: { matter: { contact_person: @matter.contact_person, detail: @matter.detail, name: @matter.name } }
+      post matters_url, params: { matter: { company_id: @matter.company_id, contact_person: @matter.contact_person, detail: @matter.detail, name: @matter.name } }
     end
 
     assert_redirected_to matter_url(Matter.last)
@@ -34,7 +34,7 @@ class MattersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update matter" do
-    patch matter_url(@matter), params: { matter: { contact_person: @matter.contact_person, detail: @matter.detail, name: @matter.name } }
+    patch matter_url(@matter), params: { matter: { company_id: @matter.company_id, contact_person: @matter.contact_person, detail: @matter.detail, name: @matter.name } }
     assert_redirected_to matter_url(@matter)
   end
 

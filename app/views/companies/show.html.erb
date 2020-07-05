@@ -1,25 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>会社名:</strong>
   <%= @company.name %>
 </p>
 
 <p>
-  <strong>Phone number:</strong>
+  <strong>TEL:</strong>
   <%= @company.phone_number %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>住所:</strong>
   <%= @company.address %>
 </p>
 
 <p>
-  <strong>Industry:</strong>
+  <strong>業種:</strong>
   <%= @company.industry %>
 </p>
-<%= link_to '案件登録', new_company_matter_path(@company) %>
+<%= link_to '案件を追加', new_company_matter_path(@company) %>
 
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+<%= link_to '編集', edit_company_path(@company) %> |
+<%= link_to '一覧へ戻る', companies_path %>

@@ -54,6 +54,6 @@ class LogsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def log_params
-      params.require(:log).permit(:next_approach_date, :status, :comment)
+      params.require(:log).permit(:next_approach_date, :status, :comment, :matter_id)
     end
 end

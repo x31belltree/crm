@@ -1,4 +1,4 @@
-<%= form_with(model: matter, local: true) do |form| %>
+<%= form_with(model: matter, url: [@company, matter], local: true) do |form| %>
   <% if matter.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(matter.errors.count, "error") %> prohibited this matter from being saved:</h2>
@@ -24,6 +24,11 @@
   <div class="field">
     <%= form.label :contact_person %>
     <%= form.text_field :contact_person %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_id %>
+    <%= form.text_field :company_id %>
   </div>
 
   <div class="actions">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_28_235346) do
+ActiveRecord::Schema.define(version: 2020_07_04_144513) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -25,16 +25,20 @@ ActiveRecord::Schema.define(version: 2020_06_28_235346) do
     t.date "next_approach_date"
     t.integer "status"
     t.text "comment"
+    t.integer "matter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["matter_id"], name: "index_logs_on_matter_id"
   end
 
   create_table "matters", force: :cascade do |t|
     t.string "name"
     t.string "detail"
     t.string "contact_person"
+    t.integer "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_matters_on_company_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,3 +1,3 @@
 class Log < ApplicationRecord
-    belongs_to :matter
+  belongs_to :matter
 end

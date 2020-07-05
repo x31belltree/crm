@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  next_approach_date: 2020-06-28
+  next_approach_date: 2020-07-04
   status: 1
   comment: MyText
+  matter: one
 
 two:
-  next_approach_date: 2020-06-28
+  next_approach_date: 2020-07-04
   status: 1
   comment: MyText
+  matter: two

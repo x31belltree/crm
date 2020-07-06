@@ -5,7 +5,7 @@ class MattersController < ApplicationController
 
   # GET /matters
   def index
-    @matters = Matter.all
+    @matters = @company.matters.all
   end
 
   # GET /matters/1
@@ -23,7 +23,7 @@ class MattersController < ApplicationController
 
   # POST /matters
   def create
-    @matter = Matter.new(matter_params)
+    @matter = @company.matters.new(matter_params)
 
     if @matter.save
       @status = true
@@ -46,6 +46,7 @@ class MattersController < ApplicationController
   # DELETE /matters/1
   def destroy
     @matter.destroy
+    redirect_to @company, notice: 'matter was successfully destroyed.'
   end
 
   private

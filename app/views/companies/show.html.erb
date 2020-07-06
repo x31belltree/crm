@@ -20,6 +20,27 @@
   <%= @company.industry %>
 </p>
 <%= link_to '案件を追加', new_company_matter_path(@company) %>
+<table>
+  <thead>
+    <tr>
+      <th>案件名</th>
+      <th>案件詳細</th>
+      <th>担当者</th>
+    </tr>
+  </thead>
 
-<%= link_to '編集', edit_company_path(@company) %> |
+  <tbody>
+    <% @company.matters.each do |matter| %>
+      <tr>
+        <td><%= matter.name %></td>
+        <td><%= matter.detail %></td>
+        <td><%= matter.contact_person %></td>
+        <td><%= link_to '案件編集', edit_company_matter_path(matter) %></td>
+        <td><%= link_to '案件削除', company_matter_path(matter.company, matter), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</br>
+<%= link_to '会社情報を編集', edit_company_path(@company) %> 
 <%= link_to '一覧へ戻る', companies_path %>

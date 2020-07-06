@@ -4,12 +4,10 @@
   <strong>会社名:</strong>
   <%= @company.name %>
 </p>
-
 <p>
   <strong>TEL:</strong>
   <%= @company.phone_number %>
 </p>
-
 <p>
   <strong>住所:</strong>
   <%= @company.address %>
@@ -19,7 +17,8 @@
   <strong>業種:</strong>
   <%= @company.industry %>
 </p>
-<%= link_to '案件を追加', new_company_matter_path(@company) %>
+<%= link_to '企業情報を編集', edit_company_path(@company) %> 
+</br>
 <table>
   <thead>
     <tr>
@@ -35,12 +34,13 @@
         <td><%= matter.name %></td>
         <td><%= matter.detail %></td>
         <td><%= matter.contact_person %></td>
-        <td><%= link_to '案件編集', edit_company_matter_path(matter) %></td>
-        <td><%= link_to '案件削除', company_matter_path(matter.company, matter), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '案件詳細', company_matter_path(matter.company, matter) %></td>
+        <td><%= link_to '案件編集', edit_company_matter_path(matter.company, matter) %></td>
+        <td><%= link_to '案件削除', company_matter_path(matter.company, matter), method: :delete, data: { confirm: '本当にいいですか？' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= link_to '案件を追加', new_company_matter_path(@company) %>
 </br>
-<%= link_to '会社情報を編集', edit_company_path(@company) %> 
-<%= link_to '一覧へ戻る', companies_path %>
+<%= link_to '会社一覧へ戻る', companies_path %>

@@ -25,7 +25,7 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
 
     if @company.save
-      redirect_to @company, notice: 'Company was successfully created.'
+      redirect_to @company, notice: '企業情報の作成に成功しました'
     else
       render :new
     end
@@ -34,7 +34,7 @@ class CompaniesController < ApplicationController
   # PATCH/PUT /companies/1
   def update
     if @company.update(company_params)
-      redirect_to @company, notice: 'Company was successfully updated.'
+      redirect_to @company, notice: '企業情報の更新に成功しました'
     else
       render :edit
     end
@@ -43,7 +43,7 @@ class CompaniesController < ApplicationController
   # DELETE /companies/1
   def destroy
     @company.destroy
-    redirect_to companies_url, notice: 'Company was successfully destroyed.'
+    redirect_to companies_url, notice: '企業情報を削除しました'
   end
 
   private

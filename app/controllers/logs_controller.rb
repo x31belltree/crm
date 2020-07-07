@@ -28,7 +28,7 @@ class LogsController < ApplicationController
 
     if @log.save
       @status = true
-      redirect_to @matter, notice: 'ログの登録に成功しました'
+      redirect_to company_matter_path(id: @matter.id), notice: 'ログの登録に成功しました'
     else
       @status = false
     end
@@ -38,7 +38,7 @@ class LogsController < ApplicationController
   def update
     if @matter.logs.update(log_params)
       @status = true 
-      redirect_to @matter, notice: 'ログの更新に成功しました'
+      redirect_to company_matter_path(id: @matter.id), notice: 'ログの更新に成功しました'
     else
       @status = false
     end
@@ -47,7 +47,7 @@ class LogsController < ApplicationController
   # DELETE /logs/1
   def destroy
     @log.destroy
-    redirect_to @matter, notice: 'ログを削除しました'
+    redirect_to company_matter_path(id: @matter.id), notice: 'ログを削除しました'
   end
 
   private

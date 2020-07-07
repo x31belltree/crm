@@ -1,6 +1,5 @@
-<h1>Editing Log</h1>
+<h1>ログを編集</h1>
 
 <%= render 'form', log: @log %>
 
-<%= link_to 'Show', @log %> |
-<%= link_to 'Back', logs_path %>
+<%= link_to '案件詳細に戻る', company_matter_path(id: @log.matter.id) %>

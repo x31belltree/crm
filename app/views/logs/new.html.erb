@@ -2,4 +2,4 @@
 
 <%= render 'form', log: @log %>
 
-<%= link_to 'Back', company_matters_path %>
+<%= link_to '案件詳細に戻る', company_matter_path(id: @log.matter.id) %>

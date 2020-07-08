@@ -70,3 +70,6 @@ gem 'devise', '~> 4.2'
 
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+
+# enum
+gem 'enum_help'

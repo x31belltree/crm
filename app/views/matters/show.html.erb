@@ -29,7 +29,7 @@
     <% @matter.logs.each do |log| %>
       <tr>
         <td><%= log.next_approach_date %></td>
-        <td><%= log.status %></td>
+        <td><%= log.status_i18n %></td>
         <td><%= log.comment %></td>
         
         <td><%= link_to 'ログ詳細', company_matter_log_path(log.matter.company,log.matter, log) %></td>

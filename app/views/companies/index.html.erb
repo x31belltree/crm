@@ -9,6 +9,7 @@
 <table>
   <thead>
     <tr>
+      <th>企業コード</th>
       <th>企業名</th>
       <th>TEL</th>
       <th>住所</th>
@@ -19,11 +20,12 @@
   <tbody>
     <% @companies.each do |company| %>
       <tr>
+        <td><%= link_to format("%010d",company.id),company %></td>
         <td><%= company.name %></td>
         <td><%= company.phone_number %></td>
         <td><%= company.address %></td>
         <td><%= company.industry %></td>
-        <td><%= link_to '詳細', company %></td>
+
         <td><%= link_to '編集', edit_company_path(company) %></td>
         <td><%= link_to '削除', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

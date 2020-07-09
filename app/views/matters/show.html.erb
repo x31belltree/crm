@@ -19,6 +19,7 @@
 <table>
   <thead>
     <tr>
+      <th>ログ更新日</th>
       <th>次回アプローチ日</th>
       <th>ステータス</th>
       <th>コメント</th>
@@ -28,17 +29,17 @@
  <tbody>
     <% @matter.logs.each do |log| %>
       <tr>
-        <td><%= log.next_approach_date %></td>
+        <td><%= log.created_at.strftime('%Y/%m/%d') %></td>
+        <td><%= log.next_approach_date.strftime('%Y/%m/%d') %></td>
         <td><%= log.status_i18n %></td>
         <td><%= log.comment %></td>
         
-        <td><%= link_to 'ログ詳細', company_matter_log_path(log.matter.company,log.matter, log) %></td>
-        <td><%= link_to 'ログ編集', edit_company_matter_log_path(log.matter.company,log.matter, log) %></td>
-        <td><%= link_to 'ログ削除', company_matter_log_path(log.matter.company,log.matter, log), method: :delete, data: { confirm: '本当にいいですか？' } %></td>
+        <td><%= link_to 'ログ編集', edit_company_matter_log_path(@company,@matter, log) %></td>
+        <td><%= link_to 'ログ削除', company_matter_log_path(@company,@matter, log), method: :delete, data: { confirm: '本当にいいですか？' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 <%= link_to 'ログを追加', new_company_matter_log_path(@company,@matter) %>
-
-<p><%= link_to '企業情報に戻る', @matter.company %></p>
+</br>
+<p><%= link_to '企業情報に戻る', company_path(@company) %></p>

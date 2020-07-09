@@ -27,7 +27,7 @@ class MattersController < ApplicationController
 
     if @matter.save
       @status = true
-      redirect_to @company, notice: '案件の作成に成功しました'
+      redirect_to company_path(id: @company.id), notice: '案件の作成に成功しました'
     else
       @status = false
     end
@@ -37,7 +37,7 @@ class MattersController < ApplicationController
   def update
     if @matter.update(matter_params)
       @status = true
-      redirect_to @company, notice: '案件の更新に成功しました'
+      redirect_to company_path(id: @company.id), notice: '案件の更新に成功しました'
     else
       @status = false
     end
@@ -46,7 +46,7 @@ class MattersController < ApplicationController
   # DELETE /matters/1
   def destroy
     @matter.destroy
-    redirect_to @company, notice: '案件を削除しました'
+    redirect_to company_path(id: @company.id), notice: '案件を削除しました'
   end
 
   private

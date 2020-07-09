@@ -9,10 +9,6 @@ class LogsController < ApplicationController
     @logs = @matter.logs.all
   end
 
-  # GET /logs/1
-  def show
-  end
-
   # GET /logs/new
   def new
     @log = @matter.logs.new
@@ -36,7 +32,7 @@ class LogsController < ApplicationController
 
   # PATCH/PUT /logs/1
   def update
-    if @matter.logs.update(log_params)
+    if @log.update(log_params)
       @status = true 
       redirect_to company_matter_path(id: @matter.id), notice: 'ログの更新に成功しました'
     else

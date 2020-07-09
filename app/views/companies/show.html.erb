@@ -17,11 +17,11 @@
   <strong>業種:</strong>
   <%= @company.industry %>
 </p>
-<%= link_to '企業情報を編集', edit_company_path(@company) %> 
 </br>
 <table>
   <thead>
     <tr>
+      <th>案件コード</th>
       <th>案件名</th>
       <th>案件詳細</th>
       <th>担当者</th>
@@ -31,16 +31,18 @@
   <tbody>
     <% @company.matters.each do |matter| %>
       <tr>
+        <td><%= link_to format("%010d",matter.id), company_matter_path(@company, matter) %></td>
         <td><%= matter.name %></td>
         <td><%= matter.detail %></td>
         <td><%= matter.contact_person %></td>
-        <td><%= link_to '案件詳細', company_matter_path(matter.company, matter) %></td>
-        <td><%= link_to '案件編集', edit_company_matter_path(matter.company, matter) %></td>
-        <td><%= link_to '案件削除', company_matter_path(matter.company, matter), method: :delete, data: { confirm: '本当にいいですか？' } %></td>
+        <td></td>
+        <td><%= link_to '案件編集', edit_company_matter_path(@company, matter) %></td>
+        <td><%= link_to '案件削除', company_matter_path(@company, matter), method: :delete, data: { confirm: '本当にいいですか？' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</br>
 <%= link_to '案件を追加', new_company_matter_path(@company) %>
 </br>
 <%= link_to '会社一覧へ戻る', companies_path %>

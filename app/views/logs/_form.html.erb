@@ -17,7 +17,7 @@
 
   <div class="field">
     <%= form.label :status %>
-    <%= form.select :status, Log.statuses_i18n.keys.map{|k|[I18n.t("enum.log.status.#{k}"), k]} %>
+    <%= form.select :status, Log.statuses_i18n.keys.map{|k|[I18n.t("enums.log.status.#{k}"), k]} %>
   </div>
 
   <div class="field">

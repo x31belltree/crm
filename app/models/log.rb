@@ -6,11 +6,10 @@ class Log < ApplicationRecord
   validates :comment, presence: true
   
   enum status: {
-    default: 0,
-    approach: 1,
-    meeting: 2,
-    abandonment: 3,
-    close: 4,
+    approach: 0,
+    meeting: 1,
+    abandonment: 2,
+    close: 3
   },  _prefix: true
   
 end

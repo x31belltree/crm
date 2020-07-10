@@ -26,20 +26,18 @@ class MattersController < ApplicationController
     @matter = @company.matters.new(matter_params)
 
     if @matter.save
-      @status = true
       redirect_to company_path(id: @company.id), notice: '案件の作成に成功しました'
     else
-      @status = false
+      render :new
     end
   end
 
   # PATCH/PUT /matters/1
   def update
     if @matter.update(matter_params)
-      @status = true
       redirect_to company_path(id: @company.id), notice: '案件の更新に成功しました'
     else
-      @status = false
+      render :edit
     end
   end
 

@@ -1,5 +1,5 @@
 class Matter < ApplicationRecord
-    belongs_to :campany
+    belongs_to :company
     has_many :logs
     
     validates :name, presence: true

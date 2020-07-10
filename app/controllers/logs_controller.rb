@@ -23,20 +23,18 @@ class LogsController < ApplicationController
     @log = @matter.logs.new(log_params)
 
     if @log.save
-      @status = true
       redirect_to company_matter_path(id: @matter.id), notice: 'ログの登録に成功しました'
     else
-      @status = false
+      render :new
     end
   end
 
   # PATCH/PUT /logs/1
   def update
     if @log.update(log_params)
-      @status = true 
       redirect_to company_matter_path(id: @matter.id), notice: 'ログの更新に成功しました'
     else
-      @status = false
+      render :edit
     end
   end
 

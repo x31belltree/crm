@@ -16,20 +16,20 @@
   <%= @company.industry %>
 </p>
 </br>
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>案件コード</th>
-      <th>案件名</th>
-      <th>案件詳細</th>
-      <th>担当者</th>
+      <th scope="col">案件コード</th>
+      <th scope="col">案件名</th>
+      <th scope="col">案件詳細</th>
+      <th scope="col">担当者</th>
     </tr>
   </thead>
 
   <tbody>
     <% @company.matters.each do |matter| %>
       <tr>
-        <td><%= link_to format("%010d",matter.id), company_matter_path(@company, matter) %></td>
+        <td scope="row"><%= link_to format("%010d",matter.id), company_matter_path(@company, matter) %></td>
         <td><%= matter.name %></td>
         <td><%= matter.detail %></td>
         <td><%= matter.contact_person %></td>

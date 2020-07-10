@@ -14,20 +14,20 @@
 </p>
 
 <h2>ログ</h2>
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>ログ更新日</th>
-      <th>次回アプローチ日</th>
-      <th>ステータス</th>
-      <th>コメント</th>
+      <th scope="col">ログ更新日</th>
+      <th scope="col">次回アプローチ日</th>
+      <th scope="col">ステータス</th>
+      <th scope="col">コメント</th>
     </tr>
   </thead>
 
  <tbody>
     <% @matter.logs.each do |log| %>
       <tr>
-        <td><%= log.created_at.strftime('%Y/%m/%d') %></td>
+        <td scope="row"><%= log.created_at.strftime('%Y/%m/%d') %></td>
         <td><%= log.next_approach_date.strftime('%Y/%m/%d') %></td>
         <td><%= log.status_i18n %></td>
         <td><%= log.comment %></td>

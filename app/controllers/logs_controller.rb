@@ -4,11 +4,6 @@ class LogsController < ApplicationController
   before_action :set_matter
   before_action :set_log, only: [:show, :edit, :update, :destroy]
 
-  # GET /logs
-  def index
-    @logs = @matter.logs.all
-  end
-
   # GET /logs/new
   def new
     @log = @matter.logs.new

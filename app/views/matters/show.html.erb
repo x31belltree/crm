@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>案件名:</strong>
   <%= @matter.name %>
@@ -34,8 +32,9 @@
         <td><%= log.status_i18n %></td>
         <td><%= log.comment %></td>
         
-        <td><%= link_to 'ログ編集', edit_company_matter_log_path(@company,@matter, log) %></td>
-        <td><%= link_to 'ログ削除', company_matter_log_path(@company,@matter, log), method: :delete, data: { confirm: '本当にいいですか？' } %></td>
+        <td><%= link_to 'ログ詳細', company_matter_log_path(log.matter.company,log.matter, log) %></td>
+        <td><%= link_to 'ログ編集', edit_company_matter_log_path(log.matter.company,log.matter, log) %></td>
+        <td><%= link_to 'ログ削除', company_matter_log_path(log.matter.company,log.matter, log), method: :delete, data: { confirm: '本当にいいですか？' } %></td>
       </tr>
     <% end %>
   </tbody>

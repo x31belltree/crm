@@ -14,13 +14,14 @@
 </p>
 
 <h2>ログ</h2>
-<table class="table table-striped">
-  <thead>
+<table class="table table-bordered table-sm">
+  <thead class="thead-light">
     <tr>
       <th scope="col">ログ更新日</th>
       <th scope="col">次回アプローチ日</th>
       <th scope="col">ステータス</th>
       <th scope="col">コメント</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -32,9 +33,8 @@
         <td><%= log.status_i18n %></td>
         <td><%= log.comment %></td>
         
-        <td><%= link_to 'ログ詳細', company_matter_log_path(log.matter.company,log.matter, log) %></td>
         <td><%= link_to 'ログ編集', edit_company_matter_log_path(log.matter.company,log.matter, log) %></td>
-        <td><%= link_to 'ログ削除', company_matter_log_path(log.matter.company,log.matter, log), method: :delete, data: { confirm: '本当にいいですか？' } %></td>
+        <td><%= link_to 'ログ削除', company_matter_log_path(log.matter.company,log.matter, log), method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>

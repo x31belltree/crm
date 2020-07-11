@@ -16,13 +16,14 @@
   <%= @company.industry %>
 </p>
 </br>
-<table class="table table-striped">
-  <thead>
+<table class="table table-bordered table-sm">
+  <thead class="thead-light">
     <tr>
       <th scope="col">案件コード</th>
       <th scope="col">案件名</th>
       <th scope="col">案件詳細</th>
       <th scope="col">担当者</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -33,9 +34,9 @@
         <td><%= matter.name %></td>
         <td><%= matter.detail %></td>
         <td><%= matter.contact_person %></td>
-        <td></td>
+        
         <td><%= link_to '案件編集', edit_company_matter_path(@company, matter) %></td>
-        <td><%= link_to '案件削除', company_matter_path(@company, matter), method: :delete, data: { confirm: '本当にいいですか？' } %></td>
+        <td><%= link_to '案件削除', company_matter_path(@company, matter), method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>

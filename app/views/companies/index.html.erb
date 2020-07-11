@@ -4,14 +4,15 @@
 </ul>
 <br>
 <h2>企業一覧</h2>
-<table class="table table-striped">
-  <thead>
+<table class="table table-bordered table-sm">
+  <thead class="thead-light">
     <tr>
       <th scope="col">企業コード</th>
       <th scope="col">企業名</th>
       <th scope="col">TEL</th>
       <th scope="col">住所</th>
       <th scope="col">業種</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -25,7 +26,7 @@
         <td><%= company.industry %></td>
 
         <td><%= link_to '編集', edit_company_path(company) %></td>
-        <td><%= link_to '削除', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '削除', company, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>

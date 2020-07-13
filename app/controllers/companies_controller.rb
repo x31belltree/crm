@@ -4,11 +4,14 @@ class CompaniesController < ApplicationController
 
   # GET /companies
   def index
-    @companies = Company.all
+    # @companies = Company.all
+    @q = Company.ransack(params[:q])
+    @companies = @q.result(distinct: true)
   end
 
   # GET /companies/1
   def show
+    @matters = @company.matters.order(updated_at: "DESC") 
   end
 
   # GET /companies/new
@@ -45,7 +48,12 @@ class CompaniesController < ApplicationController
     @company.destroy
     redirect_to companies_url, notice: '企業情報を削除しました'
   end
-
+  
+  def search
+    @q = Company.ransack(params[:q])
+    @companies = @q.result(distinct: true)
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_company

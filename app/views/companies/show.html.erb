@@ -20,6 +20,7 @@
   <thead class="thead-light">
     <tr>
       <th scope="col">案件コード</th>
+      <th scope="col">案件更新日</th>
       <th scope="col">案件名</th>
       <th scope="col">案件詳細</th>
       <th scope="col">担当者</th>
@@ -28,9 +29,10 @@
   </thead>
 
   <tbody>
-    <% @company.matters.each do |matter| %>
+    <% @matters.each do |matter| %>
       <tr>
         <td scope="row"><%= link_to format("%010d",matter.id), company_matter_path(@company, matter) %></td>
+        <td><%= matter.updated_at.strftime('%Y/%m/%d') %></td>
         <td><%= matter.name %></td>
         <td><%= matter.detail %></td>
         <td><%= matter.contact_person %></td>
@@ -41,7 +43,8 @@
     <% end %>
   </tbody>
 </table>
-</br>
+<%= link_to '案件一覧', company_matters_path(@company) %>
 <%= link_to '案件を追加', new_company_matter_path(@company) %>
 </br>
+
 <%= link_to '会社一覧へ戻る', companies_path %>

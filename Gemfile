@@ -73,3 +73,6 @@ gem 'devise-i18n-views'
 
 # enum
 gem 'enum_help'
+
+# ransack
+gem 'ransack'

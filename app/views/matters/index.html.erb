@@ -1,6 +1,6 @@
 <h1>案件一覧</h1>
-<table>
-  <thead>
+<table  class="table table-bordered table-sm">
+  <thead  class="thead-light">
     <tr>
       <th>案件コード</th>
       <th>案件名</th>
@@ -20,8 +20,8 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
+<br/>
 <%= link_to '案件を追加', new_company_matter_path(@company) %>
+<br/>
+<%= link_to '会社詳細へ戻る', company_path(@company) %>
 

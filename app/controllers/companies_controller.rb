@@ -62,7 +62,7 @@ class CompaniesController < ApplicationController
     
     def set_search
       @q = Company.ransack(params[:q])
-      @companies = @q.result(distinct: true)
+      @companies = @q.result(distinct: true).page(params[:page])
     end
 
     # Only allow a trusted parameter "white list" through.

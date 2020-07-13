@@ -76,3 +76,6 @@ gem 'enum_help'
 
 # ransack
 gem 'ransack'
+
+# kaminari
+gem 'kaminari'

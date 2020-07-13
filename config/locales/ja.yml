@@ -226,8 +226,15 @@ ja:
   enums:
     log:
       status:
-          default: --
-          approach: アプローチ中
-          meeting: 商談中
-          abandonment: 断念
-          close: 成約
+          default: "--"
+          approach: "アプローチ中"
+          meeting: "商談中"
+          abandonment: "断念"
+          close: "成約"
+  views:
+    pagination:
+      first: 最初
+      last: 最後
+      previous: 前
+      next: 次
+      truncate: ...

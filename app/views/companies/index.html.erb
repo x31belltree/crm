@@ -2,12 +2,6 @@
 <ul>
   <li><%= link_to '新規企業登録', new_company_path %></li>
   <li><%= link_to '会社情報検索', search_companies_path %></li>
-  <li><%= search_form_for @q do |f| %>
-  <%= f.label :name_or_address_or_phone_number_or_industry, "キーワード" %>
-  <%= f.search_field :name_or_address_or_phone_number_or_industry_cont %>
-  
-  <%= f.submit "検索" %>
-<% end %></li>
 </ul>
 
 <br>

@@ -4,9 +4,7 @@ class CompaniesController < ApplicationController
 
   # GET /companies
   def index
-    # @companies = Company.all
-    @q = Company.ransack(params[:q])
-    @companies = @q.result(distinct: true)
+    @companies = Company.all
   end
 
   # GET /companies/1

@@ -1,17 +1,19 @@
-<p>
-  <strong>案件名:</strong>
-  <%= @matter.name %>
-</p>
-
-<p>
-  <strong>案件詳細:</strong>
-  <%= @matter.detail %>
-</p>
-
-<p>
-  <strong>担当者:</strong>
-  <%= @matter.contact_person %>
-</p>
+<table class="table  table-bordered table-sm w-50 p-3">
+  <tbody>
+    <tr>
+      <th class="bg-light">案件名</th>
+      <td><%= @matter.name %></td>
+    </tr>
+    <tr> 
+      <th class="bg-light">案件詳細</th>
+      <td><%= @matter.detail %></td>
+    </tr>
+    <tr>
+      <th class="bg-light">担当者</th> 
+      <td><%= @matter.contact_person %></td>
+    </tr>
+  </tbody>
+</table>
 
 <h2>ログ</h2>
 <table class="table table-bordered table-sm">

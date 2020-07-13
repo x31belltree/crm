@@ -1,11 +1,4 @@
-<h2>メニュー</h2>
-<ul>
-  <li><%= link_to '新規企業登録', new_company_path %></li>
-  <li><%= link_to '会社情報検索', search_companies_path %></li>
-</ul>
-
-<br>
-<h2>企業一覧</h2>
+<h2>検索結果</h2>
 <table class="table table-bordered table-sm">
   <thead class="thead-light">
     <tr>
@@ -33,3 +26,6 @@
     <% end %>
   </tbody>
 </table>
+<br/>
+<%= link_to '検索フォームに戻る', search_companies_path %>
+<%= link_to '会社一覧へ戻る', companies_path %>

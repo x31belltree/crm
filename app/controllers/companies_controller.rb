@@ -1,10 +1,10 @@
 class CompaniesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_search
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 
   # GET /companies
   def index
-    @companies = Company.all
   end
 
   # GET /companies/1
@@ -48,8 +48,9 @@ class CompaniesController < ApplicationController
   end
   
   def search
-    @q = Company.ransack(params[:q])
-    @companies = @q.result(distinct: true)
+  end
+
+  def result
   end
   
   private
@@ -57,6 +58,11 @@ class CompaniesController < ApplicationController
     def set_company
       @company = Company.find_by(id: params[:id])
       redirect_to(companies_url, alert: "ERROR!!") if @company.blank?
+    end
+    
+    def set_search
+      @q = Company.ransack(params[:q])
+      @companies = @q.result(distinct: true)
     end
 
     # Only allow a trusted parameter "white list" through.

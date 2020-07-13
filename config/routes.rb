@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :companies do
     collection do
       get :search
+      get :result
     end
     resources :matters do
       resources :logs

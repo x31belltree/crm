@@ -1,20 +1,24 @@
-<p>
-  <strong>会社名:</strong>
-  <%= @company.name %>
-</p>
-<p>
-  <strong>TEL:</strong>
-  <%= @company.phone_number %>
-</p>
-<p>
-  <strong>住所:</strong>
-  <%= @company.address %>
-</p>
+<table class="table  table-bordered table-sm w-50 p-3">
+  <tbody>
+    <tr>
+      <th class="bg-light">会社名</th>
+      <td><%= @company.name %></td>
+    </tr>
+    <tr> 
+      <th class="bg-light">TEL</th>
+      <td><%= @company.phone_number %></td>
+    </tr>
+    <tr>
+      <th class="bg-light">住所</th> 
+      <td><%= @company.address %></td>
+    </tr>
+    <tr>
+      <th class="bg-light">業種</th>
+      <td><%= @company.industry %></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>業種:</strong>
-  <%= @company.industry %>
-</p>
 </br>
 <table class="table table-bordered table-sm">
   <thead class="thead-light">

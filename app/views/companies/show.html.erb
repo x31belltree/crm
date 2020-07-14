@@ -20,6 +20,7 @@
 </table>
 
 </br>
+<div class="table-responsive-sm">
 <table class="table table-bordered table-sm">
   <thead class="thead-light">
     <tr>
@@ -47,8 +48,8 @@
     <% end %>
   </tbody>
 </table>
+</div>
 <%= link_to '案件一覧', company_matters_path(@company) %>
 <%= link_to '案件を追加', new_company_matter_path(@company) %>
-</br>
-
+<br/>
 <%= link_to '会社一覧へ戻る', companies_path %>

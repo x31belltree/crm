@@ -16,6 +16,7 @@
 </table>
 
 <h2>ログ</h2>
+<div class="table-responsive-sm">
 <table class="table table-bordered table-sm">
   <thead class="thead-light">
     <tr>
@@ -41,6 +42,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
 <%= link_to 'ログを追加', new_company_matter_log_path(@company,@matter) %>
 </br>
 <p><%= link_to '企業情報に戻る', company_path(@company) %></p>

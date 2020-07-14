@@ -1,4 +1,5 @@
 <h2>検索結果</h2>
+<div class="table-responsive-sm">
 <table class="table table-bordered table-sm">
   <thead class="thead-light">
     <tr>
@@ -26,6 +27,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
 <%= paginate @companies %>
 <br/>
 <%= link_to '検索フォームに戻る', search_companies_path %>

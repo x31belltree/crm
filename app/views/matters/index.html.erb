@@ -20,6 +20,7 @@
     <% end %>
   </tbody>
 </table>
+<%= paginate @matters %>
 <%= link_to '案件を追加', new_company_matter_path(@company) %>
 <br/>
 <%= link_to '会社詳細へ戻る', company_path(@company) %>

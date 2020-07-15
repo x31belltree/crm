@@ -1,13 +1,14 @@
 <h2>検索結果</h2>
+<% if @companies.any? %>
 <div class="table-responsive-sm">
 <table class="table table-bordered table-sm">
   <thead class="thead-light">
     <tr>
-      <th scope="col"><%= sort_link(@q, :id, "企業コード") %></th>
-      <th scope="col"><%= sort_link(@q, :name) %></th>
-      <th scope="col"><%= sort_link(@q, :phone_number) %></th>
-      <th scope="col"><%= sort_link(@q, :address) %></th>
-      <th scope="col"><%= sort_link(@q, :industry) %></th>
+      <th scope="col"><%= sort_link(@q_company, :id, "企業コード") %></th>
+      <th scope="col"><%= sort_link(@q_company, :name) %></th>
+      <th scope="col"><%= sort_link(@q_company, :phone_number) %></th>
+      <th scope="col"><%= sort_link(@q_company, :address) %></th>
+      <th scope="col"><%= sort_link(@q_company, :industry) %></th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -28,6 +29,9 @@
   </tbody>
 </table>
 </div>
+<% else %>
+  <p class="text-danger"><%= '検索結果がありません。' %></p>
+<% end %>
 <%= paginate @companies %>
 <br/>
 <%= link_to '検索フォームに戻る', search_companies_path %>

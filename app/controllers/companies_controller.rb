@@ -9,7 +9,8 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1
   def show
-    @matters = @company.matters.order(updated_at: "DESC") 
+    @q_matter = @company.matters.order(updated_at: "DESC").ransack(params[:q])
+    @matters = @q_matter.result(distinct: true).page(params[:page])
   end
 
   # GET /companies/new
@@ -61,8 +62,8 @@ class CompaniesController < ApplicationController
     end
     
     def set_search
-      @q = Company.ransack(params[:q])
-      @companies = @q.result(distinct: true).page(params[:page])
+      @q_company = Company.ransack(params[:q])
+      @companies = @q_company.result(distinct: true).page(params[:page])
     end
 
     # Only allow a trusted parameter "white list" through.

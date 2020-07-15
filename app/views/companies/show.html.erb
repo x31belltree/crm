@@ -24,11 +24,11 @@
 <table class="table table-bordered table-sm">
   <thead class="thead-light">
     <tr>
-      <th scope="col">案件コード</th>
-      <th scope="col">案件更新日</th>
-      <th scope="col">案件名</th>
-      <th scope="col">案件詳細</th>
-      <th scope="col">担当者</th>
+      <th scope="col"><%= sort_link(@q_matter, :id, "案件コード") %></th>
+      <th scope="col"><%= sort_link(@q_company, :updated_at, "案件更新日") %></th>
+      <th scope="col"><%= sort_link(@q_company, :name , "案件名") %></th>
+      <th scope="col"><%= sort_link(@q_company, :detail , "案件詳細") %></th>
+      <th scope="col"><%= sort_link(@q_company, :contact_person , "担当者") %></th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -49,6 +49,7 @@
   </tbody>
 </table>
 </div>
+<%= paginate @matters %>
 <%= link_to '案件一覧', company_matters_path(@company) %>
 <%= link_to '案件を追加', new_company_matter_path(@company) %>
 <br/>

@@ -43,6 +43,7 @@
   </tbody>
 </table>
 </div>
+<%= paginate @logs %>
 <%= link_to 'ログを追加', new_company_matter_log_path(@company,@matter) %>
 </br>
 <p><%= link_to '企業情報に戻る', company_path(@company) %></p>

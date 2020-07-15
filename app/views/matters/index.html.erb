@@ -2,10 +2,11 @@
 <table  class="table table-bordered table-sm">
   <thead  class="thead-light">
     <tr>
-      <th>案件コード</th>
-      <th>案件名</th>
-      <th>案件詳細</th>
-      <th>担当者</th>
+      <th scope="col"><%= sort_link(@q_matter, :id, "案件コード") %></th>
+      <th scope="col"><%= sort_link(@q_matter, :updated_at, "案件更新日") %></th>
+      <th scope="col"><%= sort_link(@q_matter, :name , "案件名") %></th>
+      <th scope="col"><%= sort_link(@q_matter, :detail , "案件詳細") %></th>
+      <th scope="col"><%= sort_link(@q_matter, :contact_person , "担当者") %></th>
     </tr>
   </thead>
 
@@ -13,6 +14,7 @@
     <% @matters.each do |matter| %>
       <tr>
         <td><%= link_to format("%010d",matter.id), company_matter_path(@company, matter) %></td>
+        <td><%= matter.updated_at.strftime('%Y/%m/%d') %></td>
         <td><%= matter.name %></td>
         <td><%= matter.detail %></td>
         <td><%= matter.contact_person %></td>

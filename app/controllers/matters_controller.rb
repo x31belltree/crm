@@ -5,12 +5,14 @@ class MattersController < ApplicationController
 
   # GET /matters
   def index
-    @matters = @company.matters.all.order(updated_at: "DESC").page(params[:page])
+    @q_matter = @company.matters.order(updated_at: "DESC").ransack(params[:q])
+    @matters = @q_matter.result(distinct: true).page(params[:page])
   end
 
   # GET /matters/1
   def show
-     @logs = @matter.logs.order(updated_at: "DESC").page(params[:page]) 
+    @q_log = @matter.logs.order(updated_at: "DESC").ransack(params[:q])
+    @logs = @q_log.result(distinct: true).page(params[:page])
   end
 
   # GET /matters/new

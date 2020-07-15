@@ -20,10 +20,10 @@
 <table class="table table-bordered table-sm">
   <thead class="thead-light">
     <tr>
-      <th scope="col">ログ更新日</th>
-      <th scope="col">次回アプローチ日</th>
-      <th scope="col">ステータス</th>
-      <th scope="col">コメント</th>
+      <th scope="col"><%= sort_link(@q_log, :updated_at, "ログ更新日") %></th>
+      <th scope="col"><%= sort_link(@q_log, :next_approach_date, "次回アプローチ日") %></th>
+      <th scope="col"><%= sort_link(@q_log, :status, "ステータス") %></th>
+      <th scope="col"><%= sort_link(@q_log, :comment, "コメント") %></th>
       <th colspan="2"></th>
     </tr>
   </thead>

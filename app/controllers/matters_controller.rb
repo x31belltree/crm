@@ -1,12 +1,11 @@
 class MattersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_company
+  before_action :set_search
   before_action :set_matter, only: [:show, :edit, :update, :destroy]
 
   # GET /matters
   def index
-    @q_matter = @company.matters.order(updated_at: "DESC").ransack(params[:q])
-    @matters = @q_matter.result(distinct: true).page(params[:page])
   end
 
   # GET /matters/1
@@ -49,6 +48,9 @@ class MattersController < ApplicationController
     @matter.destroy
     redirect_to company_path(id: @company.id), notice: '案件を削除しました'
   end
+  
+  def search
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -59,6 +61,11 @@ class MattersController < ApplicationController
     
     def set_matter
       @matter = @company.matters.find_by(id: params[:id])
+    end
+    
+    def set_search
+      @q_matter = @company.matters.order(updated_at: "DESC").ransack(params[:q])
+      @matters = @q_matter.result(distinct: true).page(params[:page])
     end
 
     def matter_params

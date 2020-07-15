@@ -1,0 +1,28 @@
+<h2>検索フォーム</h2>
+<%= search_form_for @q_matter, url:company_matters_path  do |f| %>
+
+  <div class="field">
+    <%= f.label :id ,"案件コード" %></br>
+    <%= f.search_field :id_eq %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :name %></br>
+    <%= f.search_field :name_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :detail %></br>
+    <%= f.search_field :detail_cont %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :contact_person %></br>
+    <%= f.search_field :contact_person_cont %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<br/>
+<%= link_to '会社詳細へ戻る', company_path(@company) %>

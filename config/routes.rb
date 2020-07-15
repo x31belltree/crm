@@ -5,6 +5,9 @@ Rails.application.routes.draw do
       get :result
     end
     resources :matters do
+      collection do
+        get :search
+      end
       resources :logs
     end
   end

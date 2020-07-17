@@ -62,7 +62,7 @@ class CompaniesController < ApplicationController
     end
     
     def set_search
-      @q_company = Company.ransack(params[:q])
+      @q_company = Company.order(:id).ransack(params[:q])
       @companies = @q_company.result(distinct: true).page(params[:page])
     end
 

@@ -3,6 +3,7 @@ class LogsController < ApplicationController
   before_action :set_company
   before_action :set_matter
   before_action :set_log, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [:edit,:update,:destroy]
 
   # GET /logs/new
   def new
@@ -58,5 +59,12 @@ class LogsController < ApplicationController
 
     def log_params
       params.require(:log).permit(:next_approach_date, :status, :comment, :matter_id, :user_id)
+    end
+    
+    def ensure_correct_user
+      if @log.user_id != current_user.id
+        flash[:notice] = "権限がありません"
+        redirect_to company_matter_path(id: @matter.id)
+      end
     end
 end

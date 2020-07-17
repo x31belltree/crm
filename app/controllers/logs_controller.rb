@@ -63,7 +63,7 @@ class LogsController < ApplicationController
     
     def ensure_correct_user
       if @log.user_id != current_user.id
-        flash[:notice] = "権限がありません"
+        flash[:alert] = "権限がありません"
         redirect_to company_matter_path(id: @matter.id)
       end
     end

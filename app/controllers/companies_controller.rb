@@ -44,8 +44,12 @@ class CompaniesController < ApplicationController
 
   # DELETE /companies/1
   def destroy
-    @company.destroy
-    redirect_to companies_url, notice: '企業情報を削除しました'
+    begin
+      @company.destroy
+      redirect_to companies_url, notice: '企業情報を削除しました'
+    rescue
+      redirect_to companies_url, alert: '案件があるため削除に失敗しました'
+    end
   end
   
   def search

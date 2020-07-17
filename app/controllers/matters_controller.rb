@@ -45,8 +45,12 @@ class MattersController < ApplicationController
 
   # DELETE /matters/1
   def destroy
-    @matter.destroy
-    redirect_to company_path(id: @company.id), notice: '案件を削除しました'
+    begin 
+      @matter.destroy
+      redirect_to company_path(id: @company.id), notice: '案件を削除しました'
+    rescue
+      redirect_to company_path(id: @company.id), alert: 'ログがあるため削除に失敗しました'
+    end
   end
   
   def search

@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-20.times do |i|
+15.times do |i|
  Company.create!(name: "株式会社sample#{format("%03d",0+i)}",phone_number: "03-1234-56#{format("%02d",0+i)}" ,address: "東京都港区1-1-#{1+i}" ,industry: "サービス業" )
 end
 

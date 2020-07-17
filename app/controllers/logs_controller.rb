@@ -57,6 +57,6 @@ class LogsController < ApplicationController
     end
 
     def log_params
-      params.require(:log).permit(:next_approach_date, :status, :comment, :matter_id)
+      params.require(:log).permit(:next_approach_date, :status, :comment, :matter_id, :user_id)
     end
 end

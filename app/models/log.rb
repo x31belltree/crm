@@ -1,5 +1,6 @@
 class Log < ApplicationRecord
   belongs_to :matter
+  belongs_to:user
   
   validates :next_approach_date, presence: true
   validates :status, presence: true

@@ -24,6 +24,7 @@
       <th scope="col"><%= sort_link(@q_log, :next_approach_date, "次回アプローチ日") %></th>
       <th scope="col"><%= sort_link(@q_log, :status, "ステータス") %></th>
       <th scope="col"><%= sort_link(@q_log, :comment, "コメント") %></th>
+      <th scope="col"><%= sort_link(@q_log, :user_id, "対応者") %></th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -35,6 +36,7 @@
         <td><%= log.next_approach_date.strftime('%Y/%m/%d') %></td>
         <td><%= log.status_i18n %></td>
         <td><%= log.comment %></td>
+        <td><%= log.user_id %></td>
         
         <td><%= link_to 'ログ編集', edit_company_matter_log_path(log.matter.company,log.matter, log) %></td>
         <td><%= link_to 'ログ削除', company_matter_log_path(log.matter.company,log.matter, log), method: :delete, data: { confirm: '本当に削除しますか？' } %></td>

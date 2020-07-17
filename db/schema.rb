@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_04_144513) do
+ActiveRecord::Schema.define(version: 2020_07_16_000812) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_07_04_144513) do
     t.integer "matter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["matter_id"], name: "index_logs_on_matter_id"
   end
 

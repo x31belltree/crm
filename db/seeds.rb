@@ -7,5 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 30.times do |i|
- Company.create(name: "株式会社#{format("%05d",0+i)}",phone_number: "03-1234-56#{format("%02d",0+i)}" ,address: "東京都港区1-1-#{1+i}" ,industry: "サービス業" )
+ Company.create(name: "株式会社sample#{format("%03d",0+i)}",phone_number: "03-1234-56#{format("%02d",0+i)}" ,address: "東京都港区1-1-#{1+i}" ,industry: "サービス業" )
 end
